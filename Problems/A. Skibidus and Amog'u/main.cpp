@@ -1,9 +1,9 @@
 /**                         Documentation section
 _________________________________________________________________________________________________________________
 -----------------------------------------------------------------------------------------------------------------
-@name :   B. Bobritto Bandito
+@name :    A. Skibidus and Amog'u
 @author : Omar Mohamed El Sayed Taha
-@Link : https://codeforces.com/contest/2094/problem/B
+@Link : https://codeforces.com/contest/2065/problem/A
 
 
 
@@ -26,11 +26,9 @@ int main()
     cin>> t ;
     while(t--)
     {
-        long long n, m, l, r;
-        cin >> n >> m >> l >> r;
-        long long R = min(r , m);
-        long long L= m - R;
-        cout << -L << " " << R << "\n";
+        string w;
+        cin >> w;
+        cout << w.substr(0, w.size() - 2) << "i\n";
     }
     return 0;
 }
