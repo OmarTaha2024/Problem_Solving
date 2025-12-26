@@ -1,36 +1,33 @@
-/**                         Documentation section
-_________________________________________________________________________________________________________________
------------------------------------------------------------------------------------------------------------------
-@name :   B. Bobritto Bandito
-@author : Omar Mohamed El Sayed Taha
-@Link : https://codeforces.com/contest/2094/problem/B
-
-
-
-__________________________________________________________________________________________________________________
-------------------------------------------------------------------------------------------------------------------
-**/
-
-
-#include <bits/stdc++.h>
-#define Taha ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
-#define ll long long
-#define el "\n"
-#define sp " "
+#include <iostream>
+#include <cmath>
 using namespace std;
 
-int main()
-{
-    Taha;
-    int t ;
-    cin>> t ;
-    while(t--)
-    {
-        long long n, m, l, r;
-        cin >> n >> m >> l >> r;
-        long long R = min(r , m);
-        long long L= m - R;
-        cout << -L << " " << R << "\n";
+int main() {
+    double a, b, c;
+    cout << "Enter coefficients a, b, c: ";
+    cin >> a >> b >> c;
+
+    double D = b*b - 4*a*c;
+
+    if (D > 0) {
+        // حاله الجذور الحقيقية المختلفة
+        double root1 = (-b + sqrt(D)) / (2*a);
+        double root2 = (-b - sqrt(D)) / (2*a);
+        cout << "Root 1 = " << root1 << endl;
+        cout << "Root 2 = " << root2 << endl;
     }
+    else if (D == 0) {
+        // حاله الجذر الحقيقي المكرر
+        double root = -b / (2*a);
+        cout << "Root = " << root << endl;
+    }
+    else {
+        // حاله الجذور المركبة
+        double realPart = -b / (2*a);
+        double imagPart = sqrt(-D) / (2*a);
+        cout << "Root 1 = " << realPart << " + " << imagPart << "i" << endl;
+        cout << "Root 2 = " << realPart << " - " << imagPart << "i" << endl;
+    }
+
     return 0;
 }
